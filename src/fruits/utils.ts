@@ -1,3 +1,5 @@
+import Fruit from "./fruit-types";
+
 export const getFruit = (name) => {
 	// använd fruits-arrayen och returnera det fruit-objekt som matchar name
 	// finns det ingen sådan fruit så returnera undefined
@@ -38,4 +40,23 @@ export const getIconsByCategory = (category) => {
 // gör en getIconsByColor också
 
 // gör en getCategories som returnerar en array av alla kategorier
+
+export const getCategories = (array: Fruit[]): string[] => {
+	const allFruits: string[] = [];
+	array.forEach(fruit => {
+		if (!allFruits.includes(fruit.category))
+		allFruits.push(fruit.category);
+	});
+	return allFruits;
+}
+
 // gör en getColors som returnerar en array av alla färger
+
+export const getColors = (array: Fruit[]): string[] => {
+	const allFruits: string[] = [];
+	array.forEach(fruit => {
+		if (!allFruits.includes(fruit.color))
+		allFruits.push(fruit.color);
+	});
+	return allFruits;
+}
