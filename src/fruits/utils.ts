@@ -61,6 +61,7 @@ export const getIconsByColor = (color: string, fruits: Fruit[]): string[] => {
 
 export const getCategories = (array: Fruit[]): string[] => {
 	const allFruits: string[] = [];
+	
 	array.forEach(fruit => {
 		if (!allFruits.includes(fruit.category))
 		allFruits.push(fruit.category);
@@ -72,6 +73,7 @@ export const getCategories = (array: Fruit[]): string[] => {
 
 export const getColors = (array: Fruit[]): string[] => {
 	const allFruits: string[] = [];
+
 	array.forEach(fruit => {
 		if (!allFruits.includes(fruit.color))
 		allFruits.push(fruit.color);
