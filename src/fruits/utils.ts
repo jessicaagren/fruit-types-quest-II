@@ -17,20 +17,58 @@ export const getColor = (name) => {
 
 // gör en till funktion som man ger ett fruktnamn och som returnerar en frukts kategori
 
-export const numberOfColoredFruits = (color) => {
-	// använd fruits-arrayen och returnera hur många frukter det finns av en given färg color
-	// finns det inga frukter av den färgen så svara 0
+export const numberOfColoredFruits = (color: string, fruits: Fruit[]): number => {
+	let colorCounter = 0;
+
+	fruits.forEach(fruit => {
+		if (fruit.color === color) {
+			colorCounter++;
+		}
+	});
+
+	return colorCounter;
 };
 
 // gör en numberOfCategoryFruits här också
 // använd fruits-arrayen och returnera hur många frukter det finns av en given kategori
 
-export const getFruitsByCategory = (category) => {
+export const numberOfCategoryFruits = (category: string, fruits: Fruit[]): number => {
+	let colorCounter = 0;
+
+	fruits.forEach(fruit => {
+		if (fruit.category === category) {
+			colorCounter++;
+		}
+	});
+
+	return colorCounter;
+};
+
+export const getFruitsByCategory = (category: string, fruits: Fruit[]): string[] => {
 	// använd fruits-arrayen
 	// ta emot en kategori och returnera en array av alla frukter som ingår i den kategorin
+	const fruitArray: string[] = [];
+
+	fruits.forEach(fruit => {
+		if (fruit.category === category) {
+			fruitArray.push(fruit.name);
+		}
+	});
+	return fruitArray;
 };
 
 // gör en getFruitsByColor också
+
+export const getFruitsByColor = (color: string, fruits: Fruit[]): string[] => {
+	const fruitArray: string[] = [];
+
+	fruits.forEach(fruit => {
+		if (fruit.color === color) {
+			fruitArray.push(fruit.name);
+		}
+	});
+	return fruitArray;
+};
 
 // ta emot en kategori och returnera alla ikoner från alla frukter i den kategorin
 export const getIconsByCategory = (category: string, fruits: Fruit[]): string[] => {

@@ -104,7 +104,7 @@ export const fruits: Fruit[]  = [
 		category: "berry",
 	},
 	{
-		name: "tomatoe",
+		name: "tomato",
 		icon: "🍅",
 		color: "red",
 		category: "berry",
